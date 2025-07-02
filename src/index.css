@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: translate(-10px, -30px) rotate(2deg) scale(1.05);
+    }
+    50% {
+      transform: translate(10px, -60px) rotate(-2deg) scale(1.1);
+      opacity: 0.9;
+    }
+    75% {
+      transform: translate(-15px, -90px) rotate(2deg) scale(1.05);
+    }
+    100% {
+      transform: translate(0, -120px) rotate(0deg) scale(1);
+      opacity: 0.8;
+    }
+  }
+
+  .animate-float {
+    animation: float 10s infinite ease-in-out alternate;
+  }
+
+  /* Responsive utilities */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Better touch targets for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus states for accessibility */
+  .focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-[#006A71] focus:ring-offset-2;
+  }
+
+  /* Prevent text selection on interactive elements */
+  .no-select {
+    @apply select-none;
+  }
+
+  /* Better button hover states for touch devices */
+  @media (hover: none) {
+    .hover\:scale-105:hover {
+      transform: none;
+    }
+    
+    .hover\:-translate-y-1:hover {
+      transform: none;
+    }
+  }
+}
